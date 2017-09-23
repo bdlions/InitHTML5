@@ -5,15 +5,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var ngx_bootstrap_1 = require("ngx-bootstrap");
+var ng2_file_upload_1 = require("ng2-file-upload");
 var core_2 = require("@angular/core");
 var router_1 = require("@angular/router");
-var common_1 = require("@angular/common");
 var MarketAPI_service_1 = require("./services/MarketAPI.service");
 var app_component_1 = require("./app.component");
 var home_component_1 = require("./home.component");
@@ -22,6 +21,7 @@ var profile_component_1 = require("./profile.component");
 var app_template_1 = require("./app.template");
 var topnavbar_component_1 = require("./topnavbar.component");
 var NavigationManager_1 = require("./services/NavigationManager");
+var common_1 = require("@angular/common");
 var appRoutes = [
     {
         path: '',
@@ -57,6 +57,11 @@ AppModule = __decorate([
             forms_1.FormsModule,
             http_1.HttpModule,
             ngx_bootstrap_1.BsDropdownModule.forRoot(),
+            ngx_bootstrap_1.CarouselModule.forRoot(),
+            ngx_bootstrap_1.TypeaheadModule.forRoot(),
+            ngx_bootstrap_1.DatepickerModule.forRoot(),
+            ngx_bootstrap_1.ModalModule.forRoot(),
+            ng2_file_upload_1.FileUploadModule,
             router_1.RouterModule.forRoot(appRoutes)
         ],
         declarations: [
@@ -76,10 +81,10 @@ AppModule = __decorate([
         providers: [
             MarketAPI_service_1.MarketAPI,
             NavigationManager_1.NavigationManager,
-            { provide: common_1.APP_BASE_HREF, useValue: '/MarketClient' }
+            //        {provide: APP_BASE_HREF, useValue: '/InventoryUI'}
+            { provide: common_1.LocationStrategy, useValue: '/InventoryUI/', useClass: common_1.HashLocationStrategy }
         ],
         bootstrap: [app_template_1.AppTemplate]
-        //    bootstrap: [HomeComponent]
     })
 ], AppModule);
 exports.AppModule = AppModule;

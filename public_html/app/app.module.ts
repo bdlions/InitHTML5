@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {BsDropdownModule, CarouselModule, TypeaheadModule, DatepickerModule, ModalModule} from 'ngx-bootstrap';
-//import {FileUploadModule } from 'ng2-file-upload';
+import {FileUploadModule } from 'ng2-file-upload';
 import {enableProdMode} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {APP_BASE_HREF} from '@angular/common';
@@ -17,6 +17,7 @@ import {ProfileComponent} from './profile.component';
 import {AppTemplate} from './app.template';
 import {TopNavbarComponent} from './topnavbar.component';
 import {NavigationManager} from './services/NavigationManager';
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 const appRoutes: Routes = [
     {
@@ -53,7 +54,7 @@ enableProdMode();
         TypeaheadModule.forRoot(),
         DatepickerModule.forRoot(),
         ModalModule.forRoot(),
-        //FileUploadModule,
+        FileUploadModule,
         RouterModule.forRoot(appRoutes)
     ],
     declarations: [
@@ -75,7 +76,9 @@ enableProdMode();
         MarketAPI, 
         NavigationManager,
         
-        {provide: APP_BASE_HREF, useValue: '/MarketClient'}
+//        {provide: APP_BASE_HREF, useValue: '/InventoryUI'}
+          {provide: LocationStrategy, useValue: '/InventoryUI/', useClass: HashLocationStrategy}
+
 
     ],
     bootstrap: [AppTemplate]
