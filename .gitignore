@@ -47,5 +47,5 @@ Temporary Items
 .apdisk
 /build/
 /dist/
-/public_html/node_modules/
+/node_modules/
 /nbproject/
