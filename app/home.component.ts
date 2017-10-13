@@ -8,6 +8,7 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
 import {MarketAPI} from './services/MarketAPI.service';
+import { TabsetComponent } from 'ngx-bootstrap';
 
 @Component({
     selector: 'app',
@@ -27,6 +28,12 @@ export class HomeComponent {
     ngOnInit() {
         
     }
+    
+      public alertMe(): void {
+        setTimeout(function (): void {
+          alert('You\'ve selected the alert tab!');
+        });
+      }
     
 
 }

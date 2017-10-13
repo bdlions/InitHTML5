@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-import {BsDropdownModule, CarouselModule, TypeaheadModule, DatepickerModule, ModalModule} from 'ngx-bootstrap';
+import {BsDropdownModule, CarouselModule, TypeaheadModule, DatepickerModule, ModalModule, TabsModule} from 'ngx-bootstrap';
 import {FileUploadModule } from 'ng2-file-upload';
 import {enableProdMode} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
@@ -54,6 +54,7 @@ enableProdMode();
         TypeaheadModule.forRoot(),
         DatepickerModule.forRoot(),
         ModalModule.forRoot(),
+        TabsModule.forRoot(),
         FileUploadModule,
         RouterModule.forRoot(appRoutes)
     ],
