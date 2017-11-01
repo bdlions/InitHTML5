@@ -13,6 +13,10 @@
             <li [ngClass]="{'active': activeMenu == 'profile' }">
                 <a href="#" (click)="goProfile($event)">Profile</a>
             </li>
+            <li [ngClass]="{'active': activeMenu == 'ck' }">
+                    <a href="#" (click)="goCkEditor($event)">CKEditor</a>
+            </li>
         </ul>
     </div>
 </nav>
+<angular-loader></angular-loader>

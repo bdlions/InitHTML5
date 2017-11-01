@@ -46,6 +46,11 @@ export class TopNavbarComponent {
         this.navigationManager.setActiveMenu("profile");
         this.router.navigate(["profile"]);
     }
-
+    goCkEditor(event: Event) {
+        event.preventDefault();
+        this.navigationManager.showNavBar(true);
+        this.navigationManager.setActiveMenu("ck");
+        this.router.navigate(["ck"]);
+    }
 
 }

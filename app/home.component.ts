@@ -7,7 +7,7 @@
 
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
-import {MarketAPI} from './services/MarketAPI.service';
+//import {MarketAPI} from './services/MarketAPI.service';
 import { TabsetComponent } from 'ngx-bootstrap';
 
 @Component({
@@ -20,7 +20,7 @@ export class HomeComponent {
     public sampleDate: Date = new Date();
     public minDate: Date = void 0;
     
-    constructor(private marketAPI: MarketAPI, private router: Router) 
+    constructor(private router: Router) 
     {
         
     }

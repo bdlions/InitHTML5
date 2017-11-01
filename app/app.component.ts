@@ -7,7 +7,7 @@
 
 import {Component} from '@angular/core';
 import {Router} from '@angular/router'
-import {MarketAPI} from './services/MarketAPI.service';
+//import {MarketAPI} from './services/MarketAPI.service';
 import {NavigationManager} from './services/NavigationManager';
 import {UserType} from './user.type';
 import {User} from './user';
@@ -24,7 +24,7 @@ export class AppComponent {
     private selectedUsers: User[];
     
     constructor(
-        private marketAPI: MarketAPI, 
+        //private marketAPI: MarketAPI, 
         private router:Router,
         private navigationManager: NavigationManager
     ){}
