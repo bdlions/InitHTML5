@@ -61,7 +61,7 @@ import {
     MatProgressSpinner,
     MatFormFieldControl,
     MatOptionModule,
-    MatFormFieldModule
+    MatFormFieldModule,
 } from '@angular/material';
 
 const appRoutes: Routes = [
@@ -106,9 +106,10 @@ enableProdMode();
         TabsModule.forRoot(),
 		MatFormFieldModule, MatOptionModule, MatSelectModule,
         MatMenuModule,
+        MatPaginatorModule,
         BrowserAnimationsModule, MatButtonModule, FileUploadModule,
-        RouterModule.forRoot(appRoutes)
-		CKEditorModule
+        RouterModule.forRoot(appRoutes),
+	CKEditorModule
     ],
 	exports: [
         MatAutocompleteModule,
@@ -164,9 +165,9 @@ enableProdMode();
         ProductComponent,
         ProfileComponent,
         TopNavbarComponent,
-		LoaderComponent,
+	LoaderComponent,
         MatProgressSpinner, MatSpinner,
-		CKEditorSample
+	CKEditorSample,
     ],
     providers: [
         //MarketAPI, 
