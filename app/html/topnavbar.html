@@ -4,18 +4,48 @@
             <a class="navbar-brand" href="#">HTML5Market</a>
         </div>
         <ul class="nav navbar-nav">
-            <li [ngClass]="{'active': activeMenu == 'home' }">
+            <li mat-button (click)="goHome($event)" [ngClass]="{'active': activeMenu == 'home' }">
+                <span>Home</span>
+            </li>
+            <li mat-button (mouseover)="saleMenu.openMenu()" #saleMenu="matMenuTrigger" [matMenuTriggerFor]="saleMenuItems">
+                <span>Sale </span>
+            </li>
+
+            <mat-menu #saleMenuItems="matMenu" [overlapTrigger]="false" >
+                <li mat-menu-item [ngClass]="{'active': activeMenu == 'managesale' }" [matMenuTriggerFor]="saleSubMenuItems">
+                    <span>Manage Sale</span>
+                </li>
+
+                <li mat-menu-item [ngClass]="{'active': activeMenu == 'products' }" (click)="goProduct($event)" >
+                    <span>Products</span>
+                </li>
+            </mat-menu>
+            <mat-menu #saleSubMenuItems="matMenu" [overlapTrigger]="false" >
+                <li mat-menu-item [ngClass]="{'active': activeMenu == 'managesale' }">
+                    <span>Sub sub menu 1</span>
+                </li>
+                <li mat-menu-item [ngClass]="{'active': activeMenu == 'salelist' }" >
+                    <span>Sub sub menu 2</span>
+                </li>
+            </mat-menu>
+<!--            <li [ngClass]="{'active': activeMenu == 'home' }">
                 <a href="#" (click)="goHome($event)" >Home</a>
-            </li>
-            <li [ngClass]="{'active': activeMenu == 'products' }">
+            </li>-->
+<!--            <li [ngClass]="{'active': activeMenu == 'products' }">
                 <a href="#" (click)="goProduct($event)">Products</a>
+            </li>-->
+            <li mat-button (click)="goProfile($event)" [ngClass]="{'active': activeMenu == 'profile' }">
+                <span>Profile</span>
             </li>
-            <li [ngClass]="{'active': activeMenu == 'profile' }">
+            <li mat-button (click)="goCkEditor($event)" [ngClass]="{'active': activeMenu == 'ck' }">
+                <span>CKEditor</span>
+            </li>
+<!--            <li [ngClass]="{'active': activeMenu == 'profile' }">
                 <a href="#" (click)="goProfile($event)">Profile</a>
             </li>
             <li [ngClass]="{'active': activeMenu == 'ck' }">
                     <a href="#" (click)="goCkEditor($event)">CKEditor</a>
-            </li>
+            </li>-->
         </ul>
     </div>
 </nav>
