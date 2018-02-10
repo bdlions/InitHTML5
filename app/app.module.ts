@@ -176,7 +176,7 @@ enableProdMode();
         LoaderService,
         
 //        {provide: APP_BASE_HREF, useValue: '/InventoryUI'}
-          {provide: LocationStrategy, useValue: '/InventoryUI/', useClass: HashLocationStrategy}
+          {provide: LocationStrategy, useValue: '/InitHTML5/', useClass: HashLocationStrategy}
 
 
     ],

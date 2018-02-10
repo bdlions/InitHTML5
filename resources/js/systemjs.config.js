@@ -65,7 +65,7 @@
                 defaultExtension: 'js'
             },
             "ng2-ckeditor": {
-                "main": "lib/index.js",
+                "main": "lib/ng2-ckeditor.js",
                 "defaultExtension": "js",
             },
             'rxjs': {
